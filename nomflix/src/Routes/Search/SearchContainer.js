@@ -4,21 +4,22 @@ import SearchContainer from "./SearchPresenter";
 // eslint-disable-next-line import/no-anonymous-default-export
 export default class extends React.Component {
     state = {
-        airingToday: null,
-        popular: null,
-        topRated: null,
+        movieResults: null,
+        tvResults: null,
+        searchTerm: null,
         error: null,
-        loading: true,
+        loading: false,
     };
 
     render() {
-        const { airingToday, popular, topRated, error, loading } = this.state;
+        const { searchTerm, tvResults, movieResults, error, loading } =
+            this.state;
 
         return (
             <SearchContainer
-                airingToday={airingToday}
-                popular={popular}
-                topRated={topRated}
+                movieResults={movieResults}
+                tvResults={tvResults}
+                searchTerm={searchTerm}
                 loading={loading}
                 error={error}
             />
